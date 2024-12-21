@@ -10,7 +10,9 @@ function App() {
         Alam Becoming A Mobile Application Developer
         Visit Our Company Website: www.clicksofts.com
       </Text>
+      <Text>Our Company Logo Display by image url</Text>
       <Image source={{ uri: 'https://clicksofts.com/wp-content/uploads/2024/12/cropped-download-44.png' }} style={{ width: 200, height: 100 }} resizeMode="contain" />
+      <Text>Image displayed from assets</Text>
       <Image source={icon} style={{ width: 200, height: 200, backgroundColor: 'red' }} resizeMode="contain" />
 
     </View>
