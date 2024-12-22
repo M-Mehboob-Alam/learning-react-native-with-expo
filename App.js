@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { ScrollView, Image, Text, View, StyleSheet } from "react-native";
 import icon from "./assets/icon.png";
 import styles from "./App.styles";
 import ImageOption from "./src/components/ImageOption";
 import Question from './assets/data/oneQuestionWithOption';
 function App() {
+  const [isSelected, setIsSelected] = useState(null);
   return (
     <View style={styles.root}>
       <Text style={[styles.title]}>
@@ -12,7 +13,7 @@ function App() {
       </Text>
       <View style={styles.optionsContainer}>
         {Question.options.map((option) => (
-          <ImageOption key={option.id} image={option.image} text={option.text} />
+          <ImageOption key={option.id} image={option.image} onPress={()=>setIsSelected(option)} isSelected={isSelected?.id === option.id} text={option.text} />
         ))}
        
 

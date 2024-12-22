@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 10
    },
+   selectedOptionContainer:{
+      backgroundColor: '#DDF4FE',
+      borderColor: '#81D5FE'
+   
+   },
    optionImage:{
     flex:1,
     width: '100%'

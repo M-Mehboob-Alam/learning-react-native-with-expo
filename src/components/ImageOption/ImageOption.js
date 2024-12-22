@@ -1,14 +1,17 @@
 import React from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, Pressable } from 'react-native'
 import styles from './styles'
 
-const ImageOption = ({image, text}) => {
+
+const ImageOption = ({image, text, isSelected, onPress}) => {
+  console.log(isSelected);
   return (
-    <View style={styles.optionContainer}>
+    <Pressable onPress={onPress} style={[styles.optionContainer, isSelected ? styles.selectedOptionContainer : {}]}>
           <Image style={styles.optionImage} resizeMode="contain" source={{ uri: image }} />
           <Text style={styles.optionText}>{text}</Text>
-    </View>
+    </Pressable >
   )
 }
+
 
 export default ImageOption
