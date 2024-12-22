@@ -2,11 +2,11 @@ import React from 'react'
 import { View, Image, Text } from 'react-native'
 import styles from './styles'
 
-const ImageOption = () => {
+const ImageOption = ({image, text}) => {
   return (
     <View style={styles.optionContainer}>
-          <Image style={styles.optionImage} resizeMode="contain" source={{ uri: 'https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png' }} />
-          <Text style={styles.optionText}>Glass</Text>
+          <Image style={styles.optionImage} resizeMode="contain" source={{ uri: image }} />
+          <Text style={styles.optionText}>{text}</Text>
     </View>
   )
 }

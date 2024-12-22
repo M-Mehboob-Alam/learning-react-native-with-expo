@@ -3,17 +3,18 @@ import { ScrollView, Image, Text, View, StyleSheet } from "react-native";
 import icon from "./assets/icon.png";
 import styles from "./App.styles";
 import ImageOption from "./src/components/ImageOption";
+import Question from './assets/data/oneQuestionWithOption';
 function App() {
   return (
     <View style={styles.root}>
       <Text style={[styles.title]}>
-        Which of these is the "Glass"?
+        {Question.question}
       </Text>
       <View style={styles.optionsContainer}>
-        <ImageOption />
-        <ImageOption />
-        <ImageOption />
-        <ImageOption />
+        {Question.options.map((option) => (
+          <ImageOption key={option.id} image={option.image} text={option.text} />
+        ))}
+       
 
         {/* <View style={styles.optionContainer}>
           <Image style={styles.optionImage} resizeMode="contain" source={{ uri: 'https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png' }} />
