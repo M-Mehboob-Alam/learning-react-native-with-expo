@@ -6,6 +6,7 @@ import ImageOption from "./src/components/ImageOption";
 import Question from './assets/data/imageMulatipleChoiceQuestions';
 import Button from "./src/components/Button";
 import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
+import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
 function App() {
   const [isSelected, setIsSelected] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,7 +35,8 @@ function App() {
   }, [setSelectedQuestion])
   return (
     <View style={styles.root}>
-      <Text style={[styles.title]}>
+      <OpenEndedQuestion />
+      {/* <Text style={[styles.title]}>
         {selectedQuestion?.question}
       </Text>
       <View style={styles.optionsContainer}>
@@ -42,7 +44,7 @@ function App() {
           <ImageOption key={option.id} image={option.image} onPress={() => setIsSelected(option)} isSelected={isSelected?.id === option.id} text={option.text} />
         ))}
       </View>
-      <Button name="Check" onPress={onPressHandler} disabled={isSelected === null ? true : false} />
+      <Button name="Check" onPress={onPressHandler} disabled={isSelected === null ? true : false} /> */}
     </View>
   )
 }
